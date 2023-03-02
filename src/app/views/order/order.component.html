@@ -1,0 +1,59 @@
+<section class="order" id="order">
+  <div class="container">
+    <div class="order-text">
+      <div class="order-text-title double-title">
+        <a
+          [queryParams]="{ product: formValues.productTitle + '1' }"
+          routerLink="/order"
+          >Хватит думать!</a
+        >
+        Доставим заказ за 30 минут!
+      </div>
+      <div class="order-text-message">
+        Мы гарантированно доставим вашу пиццу за 30 минут с момента оформления
+        заказа. Если мы опоздаем даже на 1 минуту - вы получаете весь заказ
+        бесплатно и ваучер на скидку на следующий заказ. Мы гордимся нашим
+        сервисом и сделаем всё, чтобы наш клиент был доволен и не остался
+        голодный!
+      </div>
+    </div>
+    <div class="order-form">
+      <span class="p-float-label">
+        <input
+          [(ngModel)]="formValues.productTitle"
+          pInputText
+          class="order-input"
+          id="product-input"
+          type="text"
+        />
+        <label for="product-input">Пицца</label>
+      </span>
+      <span class="p-float-label">
+        <input
+          [(ngModel)]="formValues.address"
+          pInputText
+          class="order-input"
+          id="address-input"
+          type="text"
+        />
+        <label for="address-input">Адрес</label>
+      </span>
+      <span class="p-float-label">
+        <input
+          [(ngModel)]="formValues.phone"
+          pInputText
+          class="order-input"
+          id="phone-input"
+          type="text"
+        />
+        <label for="phone-input">Телефон</label>
+      </span>
+      <button tuiButton (click)="createOrder()" class="btn" id="create-order">
+        Оформить заказ
+      </button>
+    </div>
+    <div class="order-image">
+      <img alt="pizzzza" src="../../../assets/images/pizzzzza.png" />
+    </div>
+  </div>
+</section>
